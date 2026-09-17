@@ -1,11 +1,30 @@
 import { Reveal } from './ui'
 
 const STEPS = [
-  { n: '01', title: 'Discuss', desc: 'Understand the idea, requirements and goals.' },
-  { n: '02', title: 'Plan', desc: 'Define scope, technology and timeline.' },
-  { n: '03', title: 'Build', desc: 'Design and develop the product.' },
-  { n: '04', title: 'Review', desc: 'Testing, feedback and revisions.' },
-  { n: '05', title: 'Launch', desc: 'Deploy and hand over the project.' },
+  {
+    n: '01',
+    title: 'Discover',
+    desc: 'We discuss the idea, requirements and what success looks like for your project.',
+    meta: 'Brief & Goals',
+  },
+  {
+    n: '02',
+    title: 'Design',
+    desc: 'Wireframes, interface and visual direction, refined before a single line of code.',
+    meta: 'UI & Structure',
+  },
+  {
+    n: '03',
+    title: 'Build',
+    desc: 'Front-end, back-end and integrations, developed and tested against the plan.',
+    meta: 'Development',
+  },
+  {
+    n: '04',
+    title: 'Launch',
+    desc: 'Deploy, hand over source code and documentation, then stay available.',
+    meta: 'Deploy & Handoff',
+  },
 ]
 
 export function Process() {
@@ -13,41 +32,66 @@ export function Process() {
     <section id="process" className="border-b border-line">
       <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-36">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-2">05 / Process</p>
-          <h2 className="mt-6 font-sans text-5xl font-semibold leading-[0.95] tracking-[-0.035em] text-paper md:text-7xl">
-            From idea to launch.
+          <div className="flex items-center justify-between">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-2">
+              05 / Process
+            </p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-faint">
+              01 — 04
+            </p>
+          </div>
+
+          <h2 className="mt-6 font-sans text-5xl font-semibold uppercase leading-[0.95] tracking-[-0.035em] text-paper md:text-7xl">
+            From idea
+            <br />
+            to launch.
           </h2>
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-muted">
+            A defined path from first conversation to a live, working product —
+            four stages, one deliverable.
+          </p>
         </Reveal>
 
-        <div className="mt-16 md:mt-24">
-          <div className="grid grid-cols-[auto_1fr] gap-x-6 md:grid-cols-[8rem_1fr] md:gap-x-12">
-            {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 0.06}>
-                <div className="grid grid-cols-subgrid gap-x-6 md:gap-x-12">
-                  <span
-                    className={`border-l py-8 pl-4 font-mono text-sm text-faint md:pl-8 ${
-                      i > 0 ? 'border-faint/30' : 'border-accent'
-                    } relative`}
-                  >
-                    <span
-                      className={`absolute -left-[3px] top-8 h-[5px] w-[5px] rounded-full ${
-                        i === 0 ? 'bg-accent' : 'bg-faint'
-                      }`}
-                      style={{ top: i === 0 ? '7.2rem' : '3.6rem' }}
-                    />
+        <Reveal delay={0.1}>
+          <ol className="relative mt-14 border-t border-line sm:mt-20 sm:grid sm:grid-cols-2 sm:gap-px sm:border sm:border-line sm:bg-line lg:grid-cols-4">
+            <span
+              aria-hidden="true"
+              className="absolute bottom-4 left-0 top-4 w-px bg-line sm:hidden"
+            />
+            {STEPS.map((s) => (
+              <li
+                key={s.n}
+                className="group relative border-b border-line bg-ink pl-6 transition-colors duration-300 last:border-b-0 sm:border-b-0 sm:bg-ink sm:pl-8 sm:hover:bg-ink-2 lg:pl-10"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 top-6 h-2 w-2 -translate-x-1/2 rounded-full border border-line bg-ink transition-colors duration-300 group-hover:border-accent group-hover:bg-accent sm:hidden"
+                />
+                <div className="flex items-baseline gap-4 py-9">
+                  <span className="flex-1 font-mono text-5xl font-semibold tracking-tight text-faint transition-colors duration-300 group-hover:text-accent-2 md:text-6xl">
                     {s.n}
                   </span>
-                  <div className="border-b border-line py-8">
-                    <h3 className="font-sans text-2xl font-semibold tracking-[-0.02em] text-paper md:text-3xl">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{s.desc}</p>
-                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-lg text-faint transition-colors duration-300 group-hover:text-accent"
+                  >
+                    →
+                  </span>
                 </div>
-              </Reveal>
+                <h3 className="max-w-[18ch] font-sans text-2xl font-semibold uppercase tracking-[-0.01em] text-paper transition-transform duration-300 group-hover:translate-x-1 md:text-3xl">
+                  {s.title}
+                </h3>
+                <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-muted">
+                  {s.desc}
+                </p>
+                <p className="mt-6 border-t border-line pt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
+                  {s.meta}
+                </p>
+                <span aria-hidden="true" className="block pb-10" />
+              </li>
             ))}
-          </div>
-        </div>
+          </ol>
+        </Reveal>
       </div>
     </section>
   )

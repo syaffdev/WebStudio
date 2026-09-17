@@ -6,17 +6,17 @@
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-ink: #f4f3ee;
-  --color-ink-2: #ecebe4;
-  --color-ink-3: #e3e2da;
-  --color-line: #e1e0d9;
-  --color-line-2: #cbcac2;
-  --color-paper: #111111;
-  --color-muted: #6b6b66;
-  --color-faint: #9b9b93;
-  --color-accent: #ff5c35;
-  --color-accent-2: #e64a26;
-  --color-on-accent: #0c0c0b;
+  --color-ink: #f5f4f0;
+  --color-ink-2: #eceae4;
+  --color-ink-3: #ffffff;
+  --color-line: #d8d6cf;
+  --color-line-2: #ccc9c0;
+  --color-paper: #161616;
+  --color-muted: #686863;
+  --color-faint: #a39f98;
+  --color-accent: #2457ff;
+  --color-accent-2: #173db8;
+  --color-on-accent: #ffffff;
 }
 
 :root {
